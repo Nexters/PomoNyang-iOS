@@ -28,4 +28,6 @@ public extension DEP.SPMTarget {
   
   // MARK: - Moya
   static let Moya: TargetDependency = .external(name: "Moya")
+
+  static let RiveRuntime: TargetDependency = .external(name: "RiveRuntime")
 }

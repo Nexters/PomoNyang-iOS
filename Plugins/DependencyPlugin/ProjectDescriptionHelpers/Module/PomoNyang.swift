@@ -26,6 +26,10 @@ public enum PomoNyang {
     case DesignSystem
     case Utils
   }
+
+  public enum Lab: Modulable {
+    case RiveLab
+  }
 }
 
 
@@ -56,5 +60,12 @@ extension PomoNyang.Shared {
   public var path: String {
     let typeName = String(describing: self)
     return "Shared/\(typeName)"
+  }
+}
+
+extension PomoNyang.Lab {
+  public var path: String {
+    let typeName = String(describing: self)
+    return "Lab/\(typeName)"
   }
 }

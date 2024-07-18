@@ -8,6 +8,7 @@ import ProjectDescriptionHelpers
 let packageSettings: PackageSettings = .init(
   productTypes: [
     "Moya": .framework,
+    "RiveRuntime": .framework,
     "KakaoSDKCommon": .framework,
     "KakaoSDKAuth": .framework,
 //    "KakaoSDKUser": .framework,
@@ -26,6 +27,7 @@ let package: Package = .init(
   dependencies: [
     .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", exact: "1.11.2"),
     .package(url: "https://github.com/kakao/kakao-ios-sdk.git", exact: "2.22.0"),
-    .package(url: "https://github.com/Moya/Moya.git", exact: "15.0.3")
+    .package(url: "https://github.com/Moya/Moya.git", exact: "15.0.3"),
+    .package(url: "https://github.com/rive-app/rive-ios.git", exact: "5.15.0")
   ]
 )

@@ -41,7 +41,8 @@ let appTarget: Target = .target(
   scripts: scripts,
   dependencies: [
     .dependency(module: PomoNyang.Feature.AppFeature),
-    .dependency(module: PomoNyang.Shared.DesignSystem)
+    .dependency(module: PomoNyang.Shared.DesignSystem),
+    .dependency(module: PomoNyang.Lab.RiveLab)
   ],
   settings: .targetSettings(product: .app)
 )
