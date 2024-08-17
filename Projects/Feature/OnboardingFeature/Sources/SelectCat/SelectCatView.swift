@@ -10,10 +10,12 @@ import SwiftUI
 
 import DesignSystem
 
+import RiveRuntime
 import ComposableArchitecture
 
 public struct SelectCatView: View {
   @Bindable var store: StoreOf<SelectCatCore>
+  @StateObject var catRive = RiveViewModel(fileName: "cat_motion_transparent", in: DesignSystemResources.bundle, stateMachineName: "State Machine 1")
 
   public init(store: StoreOf<SelectCatCore>) {
     self.store = store
@@ -45,9 +47,13 @@ public struct SelectCatView: View {
           ZStack {
             Rectangle()
               .foregroundStyle(Alias.Color.Background.secondary)
-              .frame(height: 240)
-            store.selectedCat?.catImage
+            //store.selectedCat?.catImage
+            catRive.view()
+            .onTapGesture {
+              catRive.triggerInput("Click")
+            }
           }
+          .frame(height: 240)
 
           HStack {
             ForEach(store.catList) { cat in
